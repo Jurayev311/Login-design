@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Button, Form, Input } from 'antd';
 import image from '../../assets/image.jpg'
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -47,41 +47,39 @@ const Login = () => {
       <div className='relative'>
         <img className='w-screen h-screen object-cover' src={image} alt="background image" />
       </div>
-      <div className='absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[350px] h-auto bg-[#ffffff3f] backdrop-blur-md p-6 rounded-[12px]'>
-          <Form
-            name="basic"
-            style={{ maxWidth: 600 }}
-            initialValues={{ remember: true }}
-            onFinish={handleLogin}
-            onFinishFailed={onFinishFailed}
-            autoComplete="off"
-            layout='vertical'
-          >
-            <Form.Item
-              label={<span className="text-white">Username</span>}
-              name="username"
-              rules={[{ required: true, message: 'Please input your username!' }]}
-            >
-              <Input onChange={(e)=>setUser(e.target.value)} className='!bg-[#ffffff88] backdrop-blur-sm' />
-            </Form.Item>
+      <div className='absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[90%] sm:w-[350px] h-auto bg-[#ffffff3f] backdrop-blur-md p-6 rounded-[12px]'>
+        <Form
+          name="basic"
+          style={{ maxWidth: 600 }}
+          initialValues={{ remember: true }}
+          onFinish={handleLogin}
+          onFinishFailed={onFinishFailed}
+          autoComplete="off"
+          layout='vertical'
+        >
+          <Form.Item
+            label={<span className="text-white">Username</span>}
+            name="username"
+            rules={[{ required: true, message: 'Please input your username!' }]}>
+            <Input onChange={(e) => setUser(e.target.value)} className='!bg-[#ffffff88] backdrop-blur-sm' />
+          </Form.Item>
 
-            <Form.Item
-              label={<span className='text-white'>Password</span>}
-              name="password"
-              rules={[{ required: true, message: 'Please input your password!' }]}
-            >
-              <Input.Password onChange={(e)=>setPass(e.target.value)} className='!bg-[#ffffff88] backdrop-blur-sm' />
-            </Form.Item>
+          <Form.Item
+            label={<span className='text-white'>Password</span>}
+            name="password"
+            rules={[{ required: true, message: 'Please input your password!' }]}>
+            <Input.Password onChange={(e) => setPass(e.target.value)} className='!bg-[#ffffff88] backdrop-blur-sm' />
+          </Form.Item>
 
-            <Form.Item label={null}>
-              <Button loading={loading} type="primary" htmlType="submit" className='w-full'>
-                Submit
-              </Button>
-            </Form.Item>
-          </Form>
-        </div>
+          <Form.Item label={null}>
+            <Button loading={loading} type="primary" htmlType="submit" className='w-full'>
+              Submit
+            </Button>
+          </Form.Item>
+        </Form>
+      </div>
     </>
   )
 }
 
-export default Login
+export default Login;

@@ -11,45 +11,16 @@ const Admin = () => {
   }
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: 'linear-gradient(135deg, rgb(34, 193, 195), rgb(253, 187, 45))',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      flexDirection: 'column',
-      color: '#fff',
-      fontFamily: 'Arial, sans-serif',
-      fontSize: '3rem',
-      fontWeight: 'bold',
-    }}>
-      <h1 style={{
-        marginBottom: '20px',
-        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
-      }}>
+    <div className='min-h-screen bg-gradient-to-r from-teal-400 to-yellow-500 flex justify-center items-center flex-col text-white font-sans font-bold'>
+      <h1 className='text-3xl sm:text-4xl md:text-5xl mb-5 text-shadow-md'>
         Admin Panel
       </h1>
-      <p style={{
-        fontSize: '1.5rem',
-        fontWeight: 'normal',
-        textShadow: '1px 1px 3px rgba(0, 0, 0, 0.3)',
-      }}>
+      <p className='text-xl sm:text-2xl md:text-3xl font-normal text-shadow-sm'>
         Welcome, Administrator!
       </p>
       <button
         onClick={handleLogOut}
-        style={{
-          marginTop: '20px',
-          padding: '10px 20px',
-          backgroundColor: 'rgb(34, 193, 195)',
-          border: 'none',
-          borderRadius: '5px',
-          color: '#fff',
-          fontSize: '1rem',
-          cursor: 'pointer',
-          boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.3)',
-          transition: 'background-color 0.3s',
-        }}
+        className='mt-5 py-2 px-4 bg-teal-400 text-white rounded-md shadow-lg transition duration-300 hover:bg-teal-500'
       >
         Log Out
       </button>
